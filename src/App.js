@@ -18,10 +18,11 @@ const App = () => {
     return (
       <div className="App">
         <h1 className="Header">Characters</h1>
-        <ul>
-          
-        </ul>
-        {/* { data && <Characters char={data}/>} */}
+        { data.map((starPpl, ind) => {
+          return <Characters starPpl={starPpl} key={ind}/>;
+          })
+        }
+      
       </div>
     );
 }
