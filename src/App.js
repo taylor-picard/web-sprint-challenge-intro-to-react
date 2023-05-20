@@ -5,16 +5,29 @@ import Characters from './components/Character';
 
 const App = () => {
   
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     useEffect(() => {
-      axios.get('https://swapi.dev/api/people/')
+        axios.get('https://swapi.dev/api/people/')
         .then(res => {
           console.log(res);
           setData(res.data);
         })
         .catch(err => console.error(err))
-    }, []);
+      }, []);
 
+    return (
+      <div className="App">
+        <h1 className="Header">Characters</h1>
+        <ul>
+          
+        </ul>
+        {/* { data && <Characters char={data}/>} */}
+      </div>
+    );
+}
+  
+export default App;
+  
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -73,12 +86,3 @@ vehicles:
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      { data && <Characters char={data}/>}
-    </div>
-  );
-}
-
-export default App;
