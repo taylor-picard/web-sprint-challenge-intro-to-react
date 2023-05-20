@@ -5,7 +5,7 @@ import react from "react";
 const Characters = (props) => {
     return (
         <div className='character-info'>
-            <h2>{props.starPpl.name}</h1>
+            <h2>{props.starPpl.name}</h2>
             <p>{props.starPpl.birth_year}</p>
             <p>{props.starPpl.species}</p>
             <p>{props.starPpl.gender}</p>
